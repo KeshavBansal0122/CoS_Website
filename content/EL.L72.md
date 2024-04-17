@@ -1,3 +1,6 @@
+---
+        title: EL.L726 Nano-Photonics and Plasmonics
+---
 Credits: 3 (3-0-0)
 
 Department: Department of Electrical Engineering
