@@ -90,30 +90,30 @@ export const FolderPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOpt
         }
       }
 
-      for (const folder of folders) {
-        const slug = joinSegments(folder, "index") as FullSlug
-        const externalResources = pageResources(pathToRoot(slug), resources)
-        const [tree, file] = folderDescriptions[folder]
-        const componentData: QuartzComponentProps = {
-          ctx,
-          fileData: file.data,
-          externalResources,
-          cfg,
-          children: [],
-          tree,
-          allFiles,
-        }
+      // for (const folder of folders) {
+      //   const slug = joinSegments(folder, "index") as FullSlug
+      //   const externalResources = pageResources(pathToRoot(slug), resources)
+      //   const [tree, file] = folderDescriptions[folder]
+      //   const componentData: QuartzComponentProps = {
+      //     ctx,
+      //     fileData: file.data,
+      //     externalResources,
+      //     cfg,
+      //     children: [],
+      //     tree,
+      //     allFiles,
+      //   }
 
-        const content = renderPage(cfg, slug, componentData, opts, externalResources)
-        const fp = await write({
-          ctx,
-          content,
-          slug,
-          ext: ".html",
-        })
+      //   const content = renderPage(cfg, slug, componentData, opts, externalResources)
+      //   const fp = await write({
+      //     ctx,
+      //     content,
+      //     slug,
+      //     ext: ".html",
+      //   })
 
-        fps.push(fp)
-      }
+      //   fps.push(fp)
+      // }
       return fps
     },
   }
