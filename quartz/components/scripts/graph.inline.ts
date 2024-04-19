@@ -270,7 +270,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     .attr("dx", 0)
     .attr("dy", (d) => -nodeRadius(d) + "px")
     .attr("text-anchor", "middle")
-    .text((d) => d.text)
+    .text((d) => d.text.slice(0, 6))
     .style("opacity", (opacityScale - 1) / 3.75)
     .style("pointer-events", "none")
     .style("font-size", fontSize + "em")
