@@ -7,10 +7,6 @@
 [[EEL806 | EEL806 Scientific Visualization]]  
 
 
-## EL.  
-[[EL.L72 | EL.L726 Nano-Photonics and Plasmonics]]  
-
-
 ## ELD  
 [[ELD411 | ELD411 B.Tech. Project-I]]  
 [[ELD431 | ELD431 B.Tech. Project-I]]  
@@ -122,6 +118,7 @@
 [[ELL723 | ELL723 Broadband Communication Systems]]  
 [[ELL724 | ELL724 Multichannel Signal Processing]]  
 [[ELL725 | ELL725 Wireless Communications]]  
+[[ELL726 | ELL726 Nano-Photonics and Plasmonics]]  
 [[ELL727 | ELL727 Digital Communication and Information Systems]]  
 [[ELL728 | ELL728 Optoelectronic Instrumentation]]  
 [[ELL729 | ELL729 Stochastic Control and Reinforcement Learning]]  
