@@ -42,6 +42,7 @@
 
 ## PYL  
 [[PYL101 | PYL101 Electromagnetism & Quantum Mechanics]]  
+[[PYL102 | PYL102 Principles of Electronic Materials]]  
 [[PYL113 | PYL113 Mathematical Physics]]  
 [[PYL114 | PYL114 Solid State Physics]]  
 [[PYL115 | PYL115 Applied Optics]]  
