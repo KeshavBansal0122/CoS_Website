@@ -41,3 +41,7 @@ These are referenced only in pre-requisites but never defined in the CoS. These 
 
 
 ### HUV887 contains pre-req in description: Investigate
+
+### managing concurrent pre-reqs (CVP242)
+
+### branch specific prereqs MCL331

@@ -53,6 +53,7 @@
 [[ELL231 | ELL231 Power Electronics and Energy Devices]]  
 [[ELL301 | ELL301 Electrical and Electronics Instrumentation]]  
 [[ELL302 | ELL302 Power Electronics]]  
+[[ELL303 | ELL303 Power Engineering-I]]  
 [[ELL304 | ELL304 Analog Electronics]]  
 [[ELL305 | ELL305 Computer Architecture]]  
 [[ELL311 | ELL311 Communication Engineering]]  

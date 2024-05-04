@@ -164,6 +164,7 @@
 [[HUL716 | HUL716 Industrial Economics]]  
 [[HUL717 | HUL717 Perspectives on Indian Economy]]  
 [[HUL718 | HUL718 Political Economy of Development]]  
+[[HUL719 | HUL719 Advanced Econometrics]]  
 [[HUL720 | HUL720 Development Economics]]  
 [[HUL731 | HUL731 What is a Text]]  
 [[HUL732 | HUL732 Contemporary Critical Theory]]  
