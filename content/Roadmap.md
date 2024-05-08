@@ -39,9 +39,10 @@ These are referenced only in pre-requisites but never defined in the CoS. These 
 43. PYL201: critical
 44. TXD411
 
-
-### HUV887 contains pre-req in description: Investigate
-
 ### managing concurrent pre-reqs (CVP242)
 
 ### branch specific prereqs MCL331
+
+# Improvements
+### Make search work properly
+### The reverse pre-req graph
