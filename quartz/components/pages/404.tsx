@@ -5,7 +5,8 @@ const NotFound: QuartzComponent = ({ cfg }: QuartzComponentProps) => {
   return (
     <article class="popover-hint">
       <h1>404</h1>
-      <p>{i18n(cfg.locale).pages.error.notFound}</p>
+      <p>Probably this course does not exist in the CoS description, or more rarely, exist but is not present on the website. 
+        Please create an issue of Github in case of latter</p>
     </article>
   )
 }
