@@ -9,32 +9,40 @@ interface Item {
   title: string
   content: string
   tags: string[]
+  code: string
 }
 
 // Can be expanded with things like "term" in the future
+let rem = ""
 type SearchType = "basic" | "tags"
 let searchType: SearchType = "basic"
 let currentSearchTerm: string = ""
 const encoder = (str: string) => str.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/)
 let index = new FlexSearch.Document<Item>({
   charset: "latin:extra",
-  encode: encoder,
   document: {
     id: "id",
     tag: "tags",
     index: [
       {
         field: "title",
+        encode: encoder,
         tokenize: "forward",
       },
       {
         field: "content",
+        encode: encoder,
         tokenize: "forward",
       },
       {
         field: "tags",
         tokenize: "forward",
       },
+      {
+        field: "code",
+        // encode: "default",
+        tokenize: "forward",
+      }
     ],
   },
 })
@@ -205,7 +213,13 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   let currentHover: HTMLInputElement | null = null
 
   async function shortcutHandler(e: HTMLElementEventMap["keydown"]) {
-    if (e.key === "k" && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
+    // add / as a hotkey to open search
+    if (e.key === "/" && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
+      e.preventDefault()
+      const searchBarOpen = container?.classList.contains("active")
+      searchBarOpen ? hideSearch() : showSearch("basic")
+      return
+    } else if (e.key === "k" && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
       e.preventDefault()
       const searchBarOpen = container?.classList.contains("active")
       searchBarOpen ? hideSearch() : showSearch("basic")
@@ -278,6 +292,7 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
       title: searchType === "tags" ? data[slug].title : highlight(term, data[slug].title ?? ""),
       content: highlight(term, data[slug].content ?? "", true),
       tags: highlightTags(term.substring(1), data[slug].tags),
+      code: ""
     }
   }
 
@@ -405,6 +420,7 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     searchType = currentSearchTerm.startsWith("#") ? "tags" : "basic"
 
     let searchResults: FlexSearch.SimpleDocumentSearchResultSetUnit[]
+    let topResult: FlexSearch.SimpleDocumentSearchResultSetUnit[] = []
     if (searchType === "tags") {
       currentSearchTerm = currentSearchTerm.substring(1).trim()
       const separatorIndex = currentSearchTerm.indexOf(" ")
@@ -434,6 +450,12 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
         })
       }
     } else if (searchType === "basic") {
+      topResult = await index.searchAsync({
+        query: currentSearchTerm,
+        limit: 1,
+        index: ["code"],
+      })
+      
       searchResults = await index.searchAsync({
         query: currentSearchTerm,
         limit: numSearchResults,
@@ -446,8 +468,17 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
       return results.length === 0 ? [] : ([...results[0].result] as number[])
     }
 
+
+    // I have no idea what Im doing
+    const getTopResult = (): number[] => {
+      const results = topResult.filter(() => true)
+      return results.length === 0 ? [] : ([...results[0].result] as number[])
+    }
+
+
     // order titles ahead of content
     const allIds: Set<number> = new Set([
+      ...getTopResult(),
       ...getByField("title"),
       ...getByField("content"),
       ...getByField("tags"),
@@ -483,6 +514,7 @@ async function fillDocument(data: { [key: FullSlug]: ContentDetails }) {
         title: fileData.title,
         content: fileData.content,
         tags: fileData.tags,
+        code: fileData.title.slice(0, 6)
       }),
     )
   }

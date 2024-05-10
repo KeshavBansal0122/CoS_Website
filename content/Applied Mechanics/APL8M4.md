@@ -1,5 +1,5 @@
 ---
-title: "APL8M4 Critical Product Evaluation"
+title: "APL8M4 APL8M4 Critical Product Evaluation"
 ---
 **Credits:** 3 (3-0-0)
 
