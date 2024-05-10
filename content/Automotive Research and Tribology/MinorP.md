@@ -1,5 +1,5 @@
 ---
-title: "MinorP Minor Project"
+title: "Minor Project"
 ---
 **Credits:** 3 (0-0-6)
 

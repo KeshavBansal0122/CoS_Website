@@ -1,5 +1,5 @@
 ---
-title: "TRV75X TRV75X Net Zero Transportation"
+title: "TRV75X Net Zero Transportation"
 ---
 **Credits:** 1 (1-0-0)
 

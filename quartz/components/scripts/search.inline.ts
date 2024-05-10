@@ -20,6 +20,7 @@ let currentSearchTerm: string = ""
 const encoder = (str: string) => str.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/)
 let index = new FlexSearch.Document<Item>({
   charset: "latin:extra",
+  // encode: encoder,
   document: {
     id: "id",
     tag: "tags",
@@ -40,7 +41,7 @@ let index = new FlexSearch.Document<Item>({
       },
       {
         field: "code",
-        // encode: "default",
+      //   // encode: "default",
         tokenize: "forward",
       }
     ],
