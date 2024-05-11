@@ -17,7 +17,7 @@ export default ((opts?: Options) => {
         <p>
           {i18n(cfg.locale).components.footer.createdWith}{" "}
           <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a>
-          , by Keshav Bansal and Anirudha Saraf, for IITD
+          , by Keshav Bansal, with help from Anirudha Saraf, for IITD
         </p>
         <ul>
           {Object.entries(links).map(([text, link]) => (
