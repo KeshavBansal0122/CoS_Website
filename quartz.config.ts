@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       websiteId: "850ad697-e4e6-4833-bd52-304539b32003"    
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "keshavbansal0122.github.io/CoS_Website",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {
