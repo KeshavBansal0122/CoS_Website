@@ -1,5 +1,5 @@
 ---
-    title: IITD Courses of Study
+    title: IITD Courses of Study Browser
 ---
 
 [[Applied Mechanics/ | Department of Applied Mechanics]]  
