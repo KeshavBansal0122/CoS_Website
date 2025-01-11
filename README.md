@@ -20,7 +20,6 @@ The tree is generated for all the courses whose all the prereqs in all the possi
   1. Consider the course [COL775](https://keshavbansal0122.github.io/CoS_Website/Computer-Science-and-Engineering/COL775), This course does not show up in COL100's backlinks because COL100 is not _directly_ mentioned in its prereqs
   2. Also for COL775, notice that it has multiple 'pathways' for its prereqs, which makes ELL409 and others a _non-mandatory_ prereq because one can opt for ELL774 directly. The backlinks list does not make any distinction between mandatory and non-mandatory prereqs.
 
-- The search is still slightly unreliable, does not always show even if course number is searched directly
 - Not all prereqs have been parsed, although I feel the rest are much more difficult to parse reliably and may need human effort
 - Bugs in the CoS itself also plagues the website. Such as many courses being mentioned in the prereqs of other courses but not existing themselves. Advice is needed how to handle these
 
